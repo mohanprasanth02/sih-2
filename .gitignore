@@ -9,6 +9,9 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+*.db
+*.sqlite
+*.sqlite3
 
 # Node / Web
 node_modules/
