@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: #09090b;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.025em;
+    color: #09090b;
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Minimalist Light Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Crisp Clean Minimalist Cards */
+.bw-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+.bw-card:hover {
+  border-color: #d4d4d8;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.bw-card-subtle {
+  background: #fafafa;
+  border: 1px solid #f4f4f5;
+  border-radius: 1rem;
+}
+
+.bw-panel {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.bw-input {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  color: #09090b;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bw-input:focus {
+  border-color: #09090b;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(9, 9, 11, 0.08);
+}
+
+/* Pill Buttons (Minimalist High-Contrast like Auralis) */
+.bw-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bw-btn-primary:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.bw-btn-primary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.bw-btn-secondary {
+  background: #ffffff;
+  color: #09090b;
+  border: 1px solid #e4e4e7;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bw-btn-secondary:hover {
+  background: #f4f4f5;
+  border-color: #d4d4d8;
+  transform: translateY(-1px);
+}
+
+.bw-btn-secondary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Digital Scale Terminal Display - Clean Light High Contrast */
+.digital-scale-oled {
+  background: #fcfcfc;
+  border: 1px solid #e4e4e7;
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle Dot Grid Background */
+.bg-dots-pattern {
+  background-image: radial-gradient(#e4e4e7 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Pill Badges */
+.bw-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #18181b;
+}
+
+.bw-badge-pass {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bw-badge-fail {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bw-badge-neutral {
+  background-color: #f4f4f5;
+  color: #71717a;
+  border: 1px solid #e4e4e7;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+}
+
+/* Dynamic Smooth Entrance & Micro Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.animate-pulse-beacon {
+  animation: pulseBeacon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.15); }
+}
+
+.stagger-1 { animation-delay: 60ms; }
+.stagger-2 { animation-delay: 120ms; }
+.stagger-3 { animation-delay: 180ms; }
+.stagger-4 { animation-delay: 240ms; }

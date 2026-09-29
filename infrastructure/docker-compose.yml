@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: labelguard_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: labelguard_db
+      POSTGRES_USER: labelguard_admin
+      POSTGRES_PASSWORD: labelguard_secure_password_2026
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    container_name: labelguard_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: ..
+      dockerfile: infrastructure/Dockerfile.api
+    container_name: labelguard_api
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DATABASE_URL: postgresql://labelguard_admin:labelguard_secure_password_2026@postgres:5432/labelguard_db
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: labelguard-ai-secret-key-sih-2026-production-grade
+      OCR_PROVIDER: paddleocr
+    volumes:
+      - ../uploads:/app/uploads
+      - ../reports:/app/reports
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: ../../infrastructure/Dockerfile.web
+    container_name: labelguard_web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "3000:80"
+
+volumes:
+  pgdata:

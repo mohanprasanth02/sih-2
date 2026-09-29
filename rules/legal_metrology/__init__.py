@@ -1,0 +1,2 @@
+# legal_metrology package
+from rules.legal_metrology.rules_data import OFFICIAL_LEGAL_METROLOGY_RULES, STATUTORY_LEGAL_DISCLAIMER
